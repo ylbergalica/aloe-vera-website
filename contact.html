@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact &amp; FAQ | Aloe &amp; Earth</title>
+  <meta name="description" content="Get in touch about orders, delivery or our aloe vera products, and read answers to common questions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 30C8 22 10 10 17 2c3 9 5 19-1 28z' fill='%235f6f45'/%3E%3C/svg%3E">
+</head>
+<body data-page="contact">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <span class="eyebrow">Contact</span>
+        <h1>Say hello</h1>
+        <p class="lead" style="margin: 0 auto">Questions about a product, a custom gift set or a wholesale order? We'd love to hear from you.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0">
+      <div class="container contact-grid">
+        <div>
+          <h2>Get in touch</h2>
+          <p class="lead">We're a small family business, so you'll always hear back from one of us, usually within a day.</p>
+          <ul class="contact-list" id="contact-list"></ul>
+        </div>
+        <form data-form="contact" class="reveal">
+          <div class="field"><label for="c-name">Your name</label><input id="c-name" name="name" required></div>
+          <div class="field"><label for="c-email">Email</label><input id="c-email" type="email" name="email" required></div>
+          <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" name="message" required></textarea></div>
+          <button class="btn" type="submit">Send message</button>
+          <p class="form__msg" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section section--cream" id="faq">
+      <div class="container">
+        <div class="center">
+          <span class="eyebrow">FAQ</span>
+          <h2>Common questions</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>How do I place an order?</summary>
+            <p>Add products to your basket and press "Send order". This opens a ready-made email or WhatsApp message with your order. We'll reply to confirm stock, delivery and payment. Nothing is charged on the website.</p>
+          </details>
+          <details>
+            <summary>Do you deliver?</summary>
+            <p>Yes. We deliver locally, and local delivery is free on orders over €40. You can also collect from us. Ask us about delivery further away.</p>
+          </details>
+          <details>
+            <summary>How long do the products last?</summary>
+            <p>Because we use fresh aloe and few preservatives, our products are best used within 6 months of opening. Keep them somewhere cool and out of direct sunlight. The pure gel lasts longest in the fridge.</p>
+          </details>
+          <details>
+            <summary>Are your products suitable for sensitive skin?</summary>
+            <p>Aloe is naturally gentle and most people with sensitive skin get on well with it. As with any skincare, patch test on a small area first, and check the full ingredient list if you have allergies. Some products contain nut oils, beeswax or honey.</p>
+          </details>
+          <details>
+            <summary>Is the aloe really grown by you?</summary>
+            <p>Yes. Every leaf comes from plants in our family garden, and we harvest them by hand shortly before each batch is made.</p>
+          </details>
+          <details>
+            <summary>Can I buy an aloe plant?</summary>
+            <p>Yes. Our plants grow "pups", small baby plants, which we pot up and sell. They're easy to care for: lots of light, very little water.</p>
+          </details>
+          <details>
+            <summary>Do you make gift sets or wholesale orders?</summary>
+            <p>We do. We can make custom gift sets for birthdays, weddings or corporate gifts, and we're happy to talk to local shops about stocking our products. Send us a message.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var S = window.SITE, items = [];
+      items.push('<li><span>Email</span><a href="mailto:' + S.email + '">' + S.email + '</a></li>');
+      if (S.phone) items.push('<li><span>Phone</span><a href="tel:' + S.phone.replace(/\s/g, "") + '">' + S.phone + '</a></li>');
+      if (S.whatsapp) items.push('<li><span>WhatsApp</span><a href="https://wa.me/' + S.whatsapp + '" target="_blank" rel="noopener">Message us on WhatsApp</a></li>');
+      if (S.location) items.push('<li><span>Where we are</span>' + S.location + '</li>');
+      if (S.instagram) items.push('<li><span>Instagram</span><a href="' + S.instagram + '" target="_blank" rel="noopener">Follow our garden</a></li>');
+      document.getElementById("contact-list").innerHTML = items.join("");
+    })();
+  </script>
+</body>
+</html>
